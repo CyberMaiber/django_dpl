@@ -1,0 +1,14 @@
+{% extends 'hometask_app/base.html' %}
+
+{% block title %}Список товаров {% endblock %}
+{% block content %}
+    <h1>Список товаров заказанных покупателем: {{ client.0.name }}</h1>
+    <h1>за последние {{ lst_days }} дней</h1>
+    {% if goods %}
+        {% for good in goods %}
+            <p>{{ good }}</p>
+        {% endfor %}
+    {% else %}
+    <p>Нет заказанных товаров за выбранный период</p>
+    {% endif %}
+{% endblock %}

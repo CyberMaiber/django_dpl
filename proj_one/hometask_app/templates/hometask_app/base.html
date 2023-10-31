@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" >
+    <title>{% block title %}Сайт{% endblock %}</title>
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'index' %}">Главная</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'about' %}">О нас</a>
+      </nav>
+    </div>
+    {% block content %}
+        <p>Скоро тут появится текст...</p>
+    {% endblock %}
+
+</body>
+</html>

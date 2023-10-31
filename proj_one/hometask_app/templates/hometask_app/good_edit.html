@@ -1,0 +1,14 @@
+{% extends 'hometask_app/base.html' %}
+{% load static %}
+{% block title %} Редактирование товара {% endblock %}
+{% block content %}
+    <p>{{ good }}</p>
+    <img src="{% static 'media/hometask_app/' %}{{ good.image_file  }}" alt="">
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Загрузить</button>
+    </form>
+
+{% endblock %}
