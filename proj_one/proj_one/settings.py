@@ -24,14 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 
+
 ALLOWED_HOSTS = [
                  '127.0.0.1',
-                 'CyberMaiber.pythonanywhere.com',
+                 'cybermaiber.pythonanywhere.com',
                  ]
 
 
@@ -56,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 
 # MEDIA_URL = '/static/media/'
 # MEDIA_ROOT = BASE_DIR / 'static/media'
@@ -90,7 +93,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'CyberMaiber$default',
-        'USER': CyberMaiber,
+        'USER': 'CyberMaiber',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
         'HOST': 'CyberMaiber.mysql.pythonanywhere-services.com',
         'OPTIONS': {
@@ -138,8 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / '/static/'
-STATIC_APP = BASE_DIR / 'hometask_app/static'
+STATIC_ROOT = BASE_DIR / 'static/'
+STATIC_APP = BASE_DIR / 'static/'
 
 
 # Default primary key field type
